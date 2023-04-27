@@ -4,14 +4,12 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\app\\Models",
-    "\\database",
-    "\\database\\migrations",
-    "\\database\\seeders",
+    "\\public",
+    "\\public\\bootstrap",
+    "\\public\\bootstrap\\js",
     "\\resources",
     "\\resources\\views",
     "\\routes"
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\UserController.php",
   "PreviewInSolutionExplorer": false
 }

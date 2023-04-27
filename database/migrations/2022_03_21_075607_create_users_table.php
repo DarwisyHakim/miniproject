@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('name');
             $table->timestamps();
+            $table->string('image')->default(' /images/user.jpeg');
         });
     }
 

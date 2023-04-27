@@ -24,6 +24,7 @@
             <button class="w-75 btn btn-lg btn-secondary" type="button" onclick="window.location.href='/register'">Sign-Up</button>
             <p class="mt-5 mb-3 text-muted">&copy; 2022–2022</p>
         </form>
+
     </main>
 
 

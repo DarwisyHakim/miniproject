@@ -1,3 +1,4 @@
+@section('login')
 {{View:: make('title')}}
 
 
@@ -10,6 +11,7 @@
         @yield('login')
      @endif
     </div>
+
 </body>
 
 {{View:: make('footer')}}

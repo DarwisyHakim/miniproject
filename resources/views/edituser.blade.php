@@ -15,11 +15,18 @@
                 <div class="card-header">Profile Picture</div>
                 <div class="card-body text-center">
                     <!-- Profile picture image-->
-                    <img class="img-account-profile rounded-circle mb-2" src="\bootstrap\images\492Shaymin_Land_Forme_DP_anime_4.png" width="220" height="200" alt="">
+                    <img class="img-account-profile rounded-circle mb-2" src="{{$users->image}}" width="220" height="200" alt="">
                     <!-- Profile picture help block-->
                     <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                    <!-- Profile picture upload button-->
-                    <button class="btn btn-primary" type="button">Upload new image</button>
+                    <!-- Profile picture upload-->
+                     <div class="card-body">
+                     <form action="upload?rid={{ Request::get('rid') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="image">
+                        <input type="submit" value="Upload">
+                    </form>
+                </div>
+                   
                 </div>
             </div>
         </div>

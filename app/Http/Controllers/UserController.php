@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Validator;
+
 
 
 class UserController extends Controller
@@ -95,4 +95,22 @@ class UserController extends Controller
         ->orWhere('name','like','%'. $req->search .'%')->paginate(10)]
         );
     }
+
+    function upload(Request $req)
+    {
+        if(request()->has('image')){
+            $imageuploaded=request()->file('image');
+            $imagename=time().'.'.$imageuploaded->getClientOriginalExtension() ;
+            $imagepath=public_path('/images/');
+            $imageuploaded->move($imagepath,$imagename);
+
+            DB::table('users')->where('id',$req->rid)
+            ->update(array(
+            'image'=>'/images/'.$imagename,
+               ));
+        }
+        return redirect()->back();
+    }
+
+
 }

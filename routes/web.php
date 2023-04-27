@@ -1,5 +1,7 @@
 <?php
-
+use App\User;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Routes;
 use Illuminate\Support\Facades\Route;
 use App\HTTP\Controllers\UserController;
 /*
@@ -48,6 +50,9 @@ Route::get('/userlist', function () {
     return view('viewuser');
 });
 
+
+Route::post('/upload',
+    [UserController::class, 'upload']);
 
 Route::get('/editmyuser',
     [UserController::class, 'getuser']);
